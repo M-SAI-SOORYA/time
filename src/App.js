@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+
+import * as React from 'react';
+import { useState } from 'react';
+import Navbar from './components/Navbar';
+import List from './components/List';
+ import Utils from './components/Utils';
+
+
+// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 function App() {
+  const [modes, setMode] = useState("light");
+
+ 
+  const toggleSwitch = () => {
+    if (modes === "light") {
+      setMode("dark");
+      document.body.style.backgroundColor = 'grey';
+    }
+    else {
+      setMode("light");
+      document.body.style.backgroundColor = 'white';
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar name="TimeZone Converter" mode={modes} />
+    
+      <List/>
+      <Utils toggleSwitch={toggleSwitch} mode={modes}  />
+      {/* <Zone place='America/New_York'/> */}
+    </>
   );
 }
 

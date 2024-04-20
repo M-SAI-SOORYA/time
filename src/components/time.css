@@ -1,0 +1,29 @@
+.compo {
+    position: relative;
+    background-color: #fcf7f7;
+    margin: 50px auto; /* Center the component horizontally and add margin from the top */
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 840px; /* Limit the maximum width */
+    width: 90%; /* Responsive width */
+    overflow: hidden; /* Ensure child elements don't overflow */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Align children in a column */
+  }
+  .drag{
+    position: relative;
+    left:-10px;
+    top:-10px;
+  }
+  .picker {
+    position: absolute; /* Position the picker absolutely */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+  }
+  
+  .gmt {
+    margin-top: auto; /* Push content to the bottom */
+    font-style: oblique;
+    font-weight: 700;
+  }
+  
